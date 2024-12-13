@@ -1,4 +1,4 @@
-package RestAssured.RAwithTestNG;
+package RestAssuredTestNG_12_12_2024.GET;
 
 import io.restassured.RestAssured;
 import org.testng.annotations.Test;

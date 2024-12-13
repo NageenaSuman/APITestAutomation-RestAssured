@@ -1,4 +1,4 @@
-package RestAssured.RAwithTestNG;
+package RestAssuredTestNG_12_12_2024.GET;
 
 import io.qameta.allure.Description;
 import io.restassured.RestAssured;

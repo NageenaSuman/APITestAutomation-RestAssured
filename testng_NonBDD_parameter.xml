@@ -3,8 +3,11 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true"
           name="C:/Users/Nageena Suman PK/IdeaProjects/APIAutomationFramework/src/test/java/RestAssured/RAwithTestNG/Exe_05_WithBDDStyleTestNG.java">
+        <parameter name="Browser" value="firefox"></parameter>
+
+
         <classes>
-            <class name="RestAssured.RAwithTestNG.Exe_06_WithBDDStyleTestNG">
+            <class name="RestAssuredTestNG_12_12_2024.ExtraFeatures.Parameters1">
 
             </class>
         </classes>

@@ -4,7 +4,7 @@
     <test verbose="2" preserve-order="true"
           name="C:/Users/Nageena Suman PK/IdeaProjects/APIAutomationFramework/src/test/java/RestAssured/RAwithTestNG/Exe_05_WithBDDStyleTestNG.java">
         <classes>
-            <class name="RestAssured.RAwithTestNG.Exe_07_NonBDDStyleTestNG">
+            <class name="RestAssuredTestNG_12_12_2024.PATCH.Exe_11_NonBDDStyle">
 
             </class>
         </classes>

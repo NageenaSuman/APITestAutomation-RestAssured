@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/Nageena Suman PK/IdeaProjects/APIAutomationFramework/src/test/java/RestAssured/RAwithTestNG/Exe_05_WithBDDStyleTestNG.java">
+        <classes>
+            <class name="RestAssuredTestNG_12_12_2024.DELETE.Exe_12NonBDDStyle">
+            </class>
+            <class name="RestAssuredTestNG_12_12_2024.DELETE.Exe_13_NonBDDStyleTestNG_GETafterDELETE">
+            </class>
+        </classes>
+    </test>
+</suite>
