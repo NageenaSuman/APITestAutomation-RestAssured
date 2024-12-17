@@ -10,12 +10,9 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class PayloadUsingHashMap {
+public class Exe_018_PayloadUsingPOJO {
 
     RequestSpecification r = RestAssured.given();
     Response re;
@@ -27,43 +24,63 @@ public class PayloadUsingHashMap {
 
     @Test
     public void test_post_RA_Map_GSON(){
-//        String payload  = "{\n" +
-//                "    \"firstname\" : \"Nageena\",\n" +
-//                "    \"lastname\" : \"PK\",\n" +
-//                "    \"totalprice\" : 181,\n" +
-//                "    \"depositpaid\" : false,\n" +
-//                "    \"bookingdates\" : {\n" +
-//                "        \"checkin\" : \"2026-01-01\",\n" +
-//                "        \"checkout\" : \"2026-01-01\"\n" +
-//                "    },\n" +
-//                "    \"additionalneeds\" : \"Dinner\"\n" +
-//                "}";
-        //HashMap --- > divide the path into parent and child
-        // hash map for parent
-        Map jsonbody = new LinkedHashMap();
-        jsonbody.put("firstname", "Nageena");
-        jsonbody.put("lastname", "PK");
-        jsonbody.put("totalprice", 34);
-        jsonbody.put("depositpaid",false);
-        // hash map for child
-        Map jsonbody1 = new LinkedHashMap();
-        jsonbody1.put("checkin", "2019-01-10");
-        jsonbody1.put("checkout", "2019-05-10");
+////        String payload  = "{\n" +
+////                "    \"firstname\" : \"Nageena\",\n" +
+////                "    \"lastname\" : \"PK\",\n" +
+////                "    \"totalprice\" : 181,\n" +
+////                "    \"depositpaid\" : false,\n" +
+////                "    \"bookingdates\" : {\n" +
+////                "        \"checkin\" : \"2026-01-01\",\n" +
+////                "        \"checkout\" : \"2026-01-01\"\n" +
+////                "    },\n" +
+////                "    \"additionalneeds\" : \"Dinner\"\n" +
+////                "}";
+//        //HashMap --- > divide the path into parent and child
+//        // hash map for parent
+//        Map jsonbody = new LinkedHashMap();
+//        jsonbody.put("firstname", "Nageena");
+//        jsonbody.put("lastname", "PK");
+//        jsonbody.put("totalprice", 34);
+//        jsonbody.put("depositpaid",false);
+//        // hash map for child
+//        Map jsonbody1 = new LinkedHashMap();
+//        jsonbody1.put("checkin", "2019-01-10");
+//        jsonbody1.put("checkout", "2019-05-10");
+//
+//        // putting all together in parent --> just a map finally need to be converted to JSON
+//        jsonbody.put("bookingdates", jsonbody1);
+//        jsonbody.put("additionalneeds", "Dinner");
+//
+//
+//        System.out.println(jsonbody);
 
-        // putting all together in parent --> just a map finally need to be converted to JSON
-        jsonbody.put("bookingdates", jsonbody1);
-        jsonbody.put("additionalneeds", "Dinner");
-
-
-        System.out.println(jsonbody);
-
-        // Map -> JSON ? ( GSON, Jackson API) --> will be done by GSON
+        // Map -> JSON ? ( GSON_17_12_2024, Jackson API) --> will be done by GSON_17_12_2024
         // {firstname=Jim, lastname=brown, totalprice=123, depositpaid=true, bookingdates={checkin=2018-01-01, checkout=2019-01-01}, additionalneeds=Breakfast}
         //{"firstname" : "Jim", lastname=brown, totalprice=123, depositpaid=true, bookingdates={checkin=2018-01-01, checkout=2019-01-01}, additionalneeds=Breakfast}
 
+        // from pojo classes
+        // https://www.jsonschema2pojo.org/ can use to convert the json to pojo classes
+        POJO_booking pjb = new POJO_booking();
+
+
+        pjb.setFirstname("Nageena");
+        pjb.setLastname("PK");
+        pjb.setDepositpaid(false);
+        pjb.setTotalprice(977);
+
+        POJO_bookingdate pjb1 = new POJO_bookingdate();
+
+        pjb1.setCheckin("2024-12-12");
+        pjb1.setCheckout("2024-12-14");
+
+        pjb.setBookingdates(pjb1);
+        pjb.setAdditionalneeds("Dinner");
+
+        System.out.println(pjb);
+
 
         r.given().baseUri("https://restful-booker.herokuapp.com")
-                .basePath("/booking").contentType(ContentType.JSON).body(jsonbody);
+                .basePath("/booking").contentType(ContentType.JSON).body(pjb);
         re = r.when().log().all().post();
         vr = re.then();
 
@@ -100,6 +117,5 @@ public class PayloadUsingHashMap {
 
     }
 }
-
 
 

@@ -50,7 +50,7 @@ public class Exe_016_AssertJ_CombinedAll {
         // Test NG Assertions_16_12_2024
 
         // Now extracting data from response
-        bookingId = vr.extract().path("booking.id"); //not getting created so ignore
+        bookingId = vr.extract().path("bookingid"); //not getting created so ignore
         System.out.println(bookingId);
         first_name = vr.extract().path("booking.firstname");
         last_name = vr.extract().path("booking.lastname");
@@ -64,7 +64,7 @@ public class Exe_016_AssertJ_CombinedAll {
         sa.assertNotNull(booking_date);
 
         // AssertJ
-        // assertThat(bookingId).isNotNull();
+        assertThat(bookingId).isNotNull();
         assertThat(first_name).isEqualTo("Nageena");
         assertThat(last_name).isEqualTo("PK");
         assertThat(booking_date).isNotNull();

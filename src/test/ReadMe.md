@@ -24,6 +24,6 @@ _Project - API Automation_
 * TestNG
 * Allure Report
 * Exten Report
-* Jackson API / GSON
+* Jackson API / GSON_17_12_2024
 * Apach POI or Fillow (Excel)
 * Log4J - Logs
