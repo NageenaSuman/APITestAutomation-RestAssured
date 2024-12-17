@@ -20,7 +20,7 @@
     HTML Report -> ReportNG, Allure Report, Extent Report
     Excel Files - Apache POI
     Logs -> Log4j
-    Assertions -> TestNG, RestAssured, AssertJ
+    Assertions_16_12_2024 -> TestNG, RestAssured, AssertJ
     MySQL - Java MySQL connector , JDBC Connector.
     Others... later - Selenium, ...
 
@@ -56,6 +56,20 @@
       <groupId>io.qameta.allure</groupId>
       <artifactId>allure-testng</artifactId>
       <version>2.29.1</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <version>3.26.3</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.11.0</version>
     </dependency>
 
   </dependencies>
